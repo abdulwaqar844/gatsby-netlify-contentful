@@ -3,7 +3,6 @@ const dotenv = require("dotenv");
 //if(process.env.NODE_ENV !== 'production'){
 dotenv.config();
 //}
-
 module.exports = {
   siteMetadata: {
     title: `Gatsby Blog Site`,
@@ -35,11 +34,10 @@ module.exports = {
     },
     `gatsby-transformer-remark`,
     {
-      resolve: "gatsby-source-contentful",
+      resolve: `gatsby-source-contentful`,
       options: {
         spaceId: process.env.GATSBY_CONTENTFUL_SPACE_ID,
         accessToken: process.env.GATSBY_CONTENTFUL_ACCESS_TOKEN,
-        forceFullSync: true,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
