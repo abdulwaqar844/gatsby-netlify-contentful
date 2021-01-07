@@ -14,6 +14,13 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+   {
+      resolve: "gatsby-source-contentful",
+      options: {
+        spaceId,
+        accessToken
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -36,17 +43,6 @@ module.exports = {
       },
     },
     `gatsby-transformer-remark`,
-    {
-      resolve: "gatsby-source-contentful",
-      options: {
-        spaceId,
-        accessToken,
-        forceFullSync: true,
-        
-      },
-    },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    
   ],
 }
